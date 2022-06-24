@@ -1,6 +1,7 @@
 @font-face {
   font-family: "UbuntuMono";
   src: url("resources/UbuntuMono.ttf");
+  font-display: swap;
 }
 * {
   margin: 0px;
