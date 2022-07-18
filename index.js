@@ -1,5 +1,13 @@
 let header, layer1, layer2, layer3, observer, aboutInterval, aboutpanel, projectspanel, aboutsection, skillz, skillzInterval,footer
 
+function openurl(url, absolute=false){
+    if(absolute){
+        window.open(url,'_blank')
+    }else{
+        window.open(`https://blog.peterferencz.me/${url}`,'_blank')
+    }
+}
+
 function load() {
     document.body.style.overflow = "auto"
     const loader = document.querySelector('#loader')
