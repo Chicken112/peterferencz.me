@@ -96,9 +96,13 @@ section{
     #links{
         position: absolute;
         z-index: 100;
-        top: 20vh;
+        top: 10vh;
         right: 10vw;
         opacity: 0;
+
+        @media screen and (max-width: $size-phone) {
+            top: 20vh;
+        }
         
         img{
             cursor: pointer;
