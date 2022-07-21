@@ -1,4 +1,4 @@
-let header, layer1, layer2, layer3, observer, aboutInterval, aboutpanel, projectspanel, aboutsection, skillz, skillzInterval,footer
+let header, layer1, layer2, layer3, observer, aboutInterval, aboutpanel, projectspanel, aboutsection, skillz, skillzInterval, footer
 
 function openurl(url, absolute=false){
     if(absolute){
@@ -22,11 +22,13 @@ function load() {
     aboutpanel = document.querySelector('#aboutpanel')
     skillz = document.querySelector('#skillz')
     footer = document.querySelector('#footer')
+    links = document.querySelector("#links")
+    linksStartOffset = links.offsetTop
     
     setTimeout(() => {
         landingSection.classList.add('loaded')
         loader.remove()
-        new TextScramble(header).setText("Hello")
+        new TextScramble(header).setText("Hello I'm")
     }, 1000);
     
     //particlesJS.load('particlesjs', 'particlesjsconfig.json');

@@ -84,7 +84,7 @@ section{
     // transition: all 0.5s;
 
     &.loaded{
-        #resume{ animation: fadeIn .5s linear .3s 1 normal forwards; }
+        #links{ animation: fadeIn .5s linear .3s 1 normal forwards; }
         #box1{ animation: flickerIn 2s linear .5s 1 normal forwards; }
         #box2{ animation: flickerIn 2s linear .1s 1 normal forwards; }
         #line1{ animation: line1 1s ease-in-out .5s 1 normal forwards; }
@@ -92,23 +92,27 @@ section{
         #subheading{ animation: flickerIn 1s ease-in-out 1.5s 1 normal forwards; }
         +#particlesjs{ animation: fadeIn 2s ease-in-out 1s 1 normal forwards; }
     }
-
-    #resume{
+    
+    #links{
         position: absolute;
-        top: 5rem;
+        z-index: 100;
+        top: 20vh;
         right: 10vw;
-        border: 1px solid $accent-color;
-        padding: .5rem;
         opacity: 0;
-        transition: background-color .2s;
-        cursor: pointer;
-
-        &:hover{
+        
+        img{
+            cursor: pointer;
+            display: inline-block;
             background-color: $accent-color;
-            a{
-                color: $background;
-            }
+            background-size: 100%;
+            border: 1px solid $accent-color;
+            margin: .5rem;
+            width: 10vw;
+            
+            &:nth-child(1){ mask: url('./resources/github.svg') no-repeat center / contain; }
+            &:nth-child(2){ mask: url('./resources/itchio.svg') no-repeat center / contain; }
         }
+
     }
 
     #box1{
@@ -161,34 +165,42 @@ section{
         }
     }
 
-    #heading{
+    #headersWrapper{
         position: absolute;
-        right: 5%;
-        bottom: 10%;
-        text-shadow: -0.1rem 0.1rem  0 $accent-color,
-        0.1rem  0.1rem  0 $accent-color,
-        0.1rem  -0.1rem 0 $accent-color,
-				     -0.1rem -0.1rem 0 $accent-color;
-        color: $background;
-        font-size: 20vw;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding-bottom: 1rem;
+        padding-right: 1rem;
 
-        @media (max-width: $size-phone) {
-            width: 100vw;
+        #heading{
+            width: 100%;
+            text-shadow: -0.1rem 0.1rem  0 $accent-color,
+            0.1rem  0.1rem  0 $accent-color,
+            0.1rem  -0.1rem 0 $accent-color,
+                         -0.1rem -0.1rem 0 $accent-color;
+            color: $background;
+            font-size: 10vw;
             text-align: right;
+    
+            @media (max-width: $size-phone) {
+                width: 100vw;
+                text-align: right;
+            }
+        }
+        #subheading{
+            width: 100%;
+            font-size: 12vw;
+            opacity: 0;
+            text-align: right;
+    
+            @media (max-width: $size-phone) {
+                width: 100vw;
+                text-align: right;
+            }
         }
     }
-    #subheading{
-        position: absolute;
-        right: 5%;
-        bottom: 2.5%;
-        font-size: 10vw;
-        opacity: 0;
 
-        @media (max-width: $size-phone) {
-            width: 100vw;
-            text-align: right;
-        }
-    }
 }
 #about{
     height: 100vh;
@@ -253,12 +265,20 @@ section{
         position: absolute;
         right: 1vw;
         top: 60vh;
+        width: 20rem;
         z-index: 1;
         border: 1px solid $accent-color;
 
         img{
-            width: 20rem;
-            height: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom: 1px solid $accent-color;
+        }
+
+        p{
+            width: 100%;
+            text-align: center;
         }
     }
     #line4{
@@ -318,6 +338,7 @@ section{
             width: 100%;
             height: auto;
             position: relative;
+            cursor: pointer;
 
             &:after{
                 content: attr(data-name);
@@ -327,6 +348,11 @@ section{
                 right: 0;
                 top: 50%;
                 transform: translateY(-50%);
+                opacity: 0;
+                transition: opacity .2s;
+            }
+            &:hover:after{
+                opacity: 1;
             }
             &:before{
                 content: '';
@@ -334,6 +360,11 @@ section{
                 inset: 0;
                 background-color: $accent-color;
                 opacity: .15;
+                transition: all .2s;
+            }
+            &:hover:before{
+                opacity: .5;
+                background-color: #000;
             }
 
             img{

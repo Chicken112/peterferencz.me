@@ -106,7 +106,7 @@ section {
 #landing {
   height: 100vh;
 }
-#landing.loaded #resume {
+#landing.loaded #links {
   -webkit-animation: fadeIn 0.5s linear 0.3s 1 normal forwards;
           animation: fadeIn 0.5s linear 0.3s 1 normal forwards;
 }
@@ -134,21 +134,29 @@ section {
   -webkit-animation: fadeIn 2s ease-in-out 1s 1 normal forwards;
           animation: fadeIn 2s ease-in-out 1s 1 normal forwards;
 }
-#landing #resume {
+#landing #links {
   position: absolute;
-  top: 5rem;
+  z-index: 100;
+  top: 20vh;
   right: 10vw;
-  border: 1px solid #829e9d;
-  padding: 0.5rem;
   opacity: 0;
-  transition: background-color 0.2s;
+}
+#landing #links img {
   cursor: pointer;
-}
-#landing #resume:hover {
+  display: inline-block;
   background-color: #829e9d;
+  background-size: 100%;
+  border: 1px solid #829e9d;
+  margin: 0.5rem;
+  width: 10vw;
 }
-#landing #resume:hover a {
-  color: #0d1114;
+#landing #links img:nth-child(1) {
+  -webkit-mask: url("./resources/github.svg") no-repeat center/contain;
+          mask: url("./resources/github.svg") no-repeat center/contain;
+}
+#landing #links img:nth-child(2) {
+  -webkit-mask: url("./resources/itchio.svg") no-repeat center/contain;
+          mask: url("./resources/itchio.svg") no-repeat center/contain;
 }
 #landing #box1 {
   opacity: 0;
@@ -204,29 +212,35 @@ section {
     height: 60%;
   }
 }
-#landing #heading {
+#landing #headersWrapper {
   position: absolute;
-  right: 5%;
-  bottom: 10%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+#landing #headersWrapper #heading {
+  width: 100%;
   text-shadow: -0.1rem 0.1rem 0 #829e9d, 0.1rem 0.1rem 0 #829e9d, 0.1rem -0.1rem 0 #829e9d, -0.1rem -0.1rem 0 #829e9d;
   color: #0d1114;
-  font-size: 20vw;
+  font-size: 10vw;
+  text-align: right;
 }
 @media (max-width: 480px) {
-  #landing #heading {
+  #landing #headersWrapper #heading {
     width: 100vw;
     text-align: right;
   }
 }
-#landing #subheading {
-  position: absolute;
-  right: 5%;
-  bottom: 2.5%;
-  font-size: 10vw;
+#landing #headersWrapper #subheading {
+  width: 100%;
+  font-size: 12vw;
   opacity: 0;
+  text-align: right;
 }
 @media (max-width: 480px) {
-  #landing #subheading {
+  #landing #headersWrapper #subheading {
     width: 100vw;
     text-align: right;
   }
@@ -297,6 +311,7 @@ section {
   position: absolute;
   right: 1vw;
   top: 60vh;
+  width: 20rem;
   z-index: 1;
   border: 1px solid #829e9d;
 }
@@ -306,8 +321,15 @@ section {
   }
 }
 #about #picture img {
-  width: 20rem;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-bottom: 1px solid #829e9d;
+}
+#about #picture p {
+  width: 100%;
+  text-align: center;
 }
 #about #line4 {
   position: absolute;
@@ -365,6 +387,7 @@ section {
   width: 100%;
   height: auto;
   position: relative;
+  cursor: pointer;
 }
 #projects #gallery div:after {
   content: attr(data-name);
@@ -374,6 +397,11 @@ section {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+#projects #gallery div:hover:after {
+  opacity: 1;
 }
 #projects #gallery div:before {
   content: "";
@@ -381,6 +409,11 @@ section {
   inset: 0;
   background-color: #829e9d;
   opacity: 0.15;
+  transition: all 0.2s;
+}
+#projects #gallery div:hover:before {
+  opacity: 0.5;
+  background-color: #000;
 }
 #projects #gallery div img {
   width: 100%;
@@ -548,4 +581,4 @@ section {
   100% {
     opacity: 0.8;
   }
-}/*# sourceMappingURL=style.css.map */
+}
