@@ -251,9 +251,22 @@ section{
             animation: flickerInTo80 1s linear 0s 1 normal forwards;
         }
 
+        >div{
+            margin-top: 2rem;
+
+            margin-left: 1rem;
+            &.visible{
+                animation: flyInFromLeft .2s linear 0.1s 1 normal forwards;
+            }
+        }
+        i[class^="devicon"]{
+            margin-right: 1rem;
+        }
+
         @media screen and (max-width: $size-small) {
             width: calc(100% - 10rem);
             margin-left: 5rem;
+            text-align: left;
         }
         @media screen and (max-width: $size-phone) {
             width: calc(100% - 2px - 2rem);
@@ -367,7 +380,7 @@ section{
                 transition: all .2s;
             }
             &:hover:before{
-                opacity: .5;
+                opacity: .7;
                 background-color: #000;
             }
 
@@ -468,5 +481,13 @@ section{
     }
     100%{
         opacity: .8;
+    }
+}
+@keyframes flyInFromLeft {
+    0%{
+        margin-left: 1rem;
+    }
+    100%{
+        margin-left: 0px;
     }
 }

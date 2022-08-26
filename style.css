@@ -300,10 +300,22 @@ section {
   -webkit-animation: flickerInTo80 1s linear 0s 1 normal forwards;
           animation: flickerInTo80 1s linear 0s 1 normal forwards;
 }
+#about #skillz > div {
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+#about #skillz > div.visible {
+  -webkit-animation: flyInFromLeft 0.2s linear 0.1s 1 normal forwards;
+          animation: flyInFromLeft 0.2s linear 0.1s 1 normal forwards;
+}
+#about #skillz i[class^=devicon] {
+  margin-right: 1rem;
+}
 @media screen and (max-width: 1024px) {
   #about #skillz {
     width: calc(100% - 10rem);
     margin-left: 5rem;
+    text-align: left;
   }
 }
 @media screen and (max-width: 480px) {
@@ -417,7 +429,7 @@ section {
   transition: all 0.2s;
 }
 #projects #gallery div:hover:before {
-  opacity: 0.5;
+  opacity: 0.7;
   background-color: #000;
 }
 #projects #gallery div img {
@@ -585,5 +597,21 @@ section {
   }
   100% {
     opacity: 0.8;
+  }
+}
+@-webkit-keyframes flyInFromLeft {
+  0% {
+    margin-left: 1rem;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+@keyframes flyInFromLeft {
+  0% {
+    margin-left: 1rem;
+  }
+  100% {
+    margin-left: 0px;
   }
 }

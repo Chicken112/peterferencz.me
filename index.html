@@ -20,6 +20,9 @@
     <!-- Particles.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" onload="particlesJS.load('particlesjs', 'particlesjsconfig.json')"></script>
 
+    <!-- Devicon.dev -->
+    <link rel="stylesheet" fetchpriority="low" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"> 
+
     <script src="scramblr.js"></script>
 </head>
 <body>
@@ -71,10 +74,22 @@
         </div>
         <div id="skillz" class="intersect">
             <h1 id="skillztitle" class="intersect">My skills</h1>
-            <p>Unity - Both 3d and 2d game making using C#</p>
-            <p>Web - html, (s)css, javascript, react</p>
-            <p>.NET - desktop applications written in C#</p>
-            <p>Android Studio - mobile applications</p>
+            <div class="intersect">
+                <p><i class="devicon-unity-original"></i>Unity</p>
+                <p>Both 3d and 2d game making using C#</p>
+            </div>
+            <div class="intersect">
+                <p><i class="devicon-nodejs-plain"></i>Full stack Web</p>
+                <p>Html, (s)css, javascript, node, react</p>
+            </div>
+            <div class="intersect">
+                <p><i class="devicon-dotnetcore-plain"></i>.NET</p>
+                <p>Desk applications written in C#</p>
+            </div>
+            <div class="intersect">
+                <p><i class="devicon-androidstudio-plain"></i>Android Studio</p>
+                <p>Mobile applications for Android</p>
+            </div>
         </div>
         <div id="line6" class="layer3"></div>
         <div id="line7" class="layer1"></div>
@@ -88,11 +103,11 @@
             <div data-name="Desktop managR" onclick="openurl('desktop-managr')">
                 <img width="100px" src="resources/desktopmanager.png" alt="DekstopmanagR" loading=lazy>
             </div>
-            <div data-name="Nonogram SolvR" onclick="window.open('https:/'+'/github.com/peterferencz/nonogram-solver','_blank')">
+            <div data-name="Nonogram SolvR" onclick="window.open('https:/'+'/github.com/peterferencz/nonogram-solvr','_blank')">
                 <img width="100px" src="resources/nonogramsolver.png" alt="NonogramSolvR" loading=lazy>
             </div>
         </div>
     </section>
-    <section id="footer">Copyright Péter Ferencz, 2022</section>
+    <section id="footer">&copy; Copyright Péter Ferencz, 2022</section>
 </body>
 </html>
