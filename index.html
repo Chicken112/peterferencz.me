@@ -18,12 +18,13 @@
     <meta property="og:description" content="The portfolio of Peter Ferencz: full stack developer, software engineer and game designer"/>
 
     <!-- Particles.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" onload="particlesJS.load('particlesjs', 'particlesjsconfig.json')"></script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <script async defer src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" onload="particlesJS.load('particlesjs', 'particlesjsconfig.json')"></script>
 
     <!-- Devicon.dev -->
     <link rel="stylesheet" fetchpriority="low" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"> 
 
-    <script src="scramblr.js"></script>
+    <script defer src="scramblr.js"></script>
 </head>
 <body>
     <section id="loader">
@@ -50,15 +51,9 @@
         <div id="line2" class="layer2"></div>
         
         <div id="headersWrapper">
-
             <h1 id="heading" class="layer1"></h1>
             <h3 id="subheading">/Péter Ferencz/</h3>
         </div>
-
-        <!-- <div id="links">
-            <a href="" data-text="About">About</a>
-            <a href="" data-text="Projects">Projects</a>
-        </div> -->
     </section>
     <section id="about">
         <div id="particlesjs"></div>
@@ -98,13 +93,13 @@
         <h1 id="projectstitle" class="intersect">Projects</h1>
         <div id="gallery">
             <div data-name="Breadengine" onclick="openurl('breadengine')">
-                <img width="100px" src="resources/breadengine.png" alt="Breadengine" loading=lazy>
+                <img src="resources/breadengine.webp" alt="Breadengine" loading=lazy>
             </div>
             <div data-name="Desktop managR" onclick="openurl('desktop-managr')">
-                <img width="100px" src="resources/desktopmanager.png" alt="DekstopmanagR" loading=lazy>
+                <img src="resources/desktopmanager.webp" alt="DekstopmanagR" loading=lazy>
             </div>
             <div data-name="Nonogram SolvR" onclick="window.open('https:/'+'/github.com/peterferencz/nonogram-solvr','_blank')">
-                <img width="100px" src="resources/nonogramsolver.png" alt="NonogramSolvR" loading=lazy>
+                <img src="resources/nonogramsolver.webp" alt="NonogramSolvR" loading=lazy>
             </div>
         </div>
     </section>

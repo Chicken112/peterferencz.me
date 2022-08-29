@@ -31,8 +31,6 @@ function load() {
         new TextScramble(header).setText("Hello I'm")
     }, 1000);
     
-    //particlesJS.load('particlesjs', 'particlesjsconfig.json');
-    
     const intersectobjects = document.querySelectorAll('.intersect')
     observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
