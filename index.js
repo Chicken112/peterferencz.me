@@ -4,7 +4,7 @@ function openurl(url, absolute=false){
     if(absolute){
         window.open(url,'_blank')
     }else{
-        window.open(`https://blog.peterferencz.me/${url}`,'_blank')
+        window.open(`https://github.com/peterferencz/${url}`,'_blank')
     }
 }
 
