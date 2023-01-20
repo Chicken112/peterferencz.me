@@ -118,7 +118,66 @@ section{
         }
 
     }
+    #cross1{
+        position: absolute;
+        top: 5rem;
+        left: 20%;
 
+        &:before, &:after {
+            content: ' ';
+            position: absolute;
+            left: 15px;
+            height: 33px;
+            width: 2px;
+            background-color: $accent-color;
+          }
+          &:before {
+            transform: rotate(45deg);
+          }
+          &:after {
+            transform: rotate(-45deg);
+          }
+    }
+    #cross2{
+        position: absolute;
+        top: 7rem;
+        left: 15%;
+
+        &:before, &:after {
+            content: ' ';
+            position: absolute;
+            left: 15px;
+            height: 33px;
+            width: 2px;
+            background-color: $accent-color;
+          }
+          &:before {
+            transform: rotate(45deg);
+          }
+          &:after {
+            transform: rotate(-45deg);
+        }
+    }
+    #cross3{
+        position: absolute;
+        top: 9rem;
+        left: 18%;
+
+        &:before, &:after {
+            content: ' ';
+            position: absolute;
+            left: 15px;
+            height: 33px;
+            width: 2px;
+            background-color: $accent-color;
+          }
+          &:before {
+            transform: rotate(45deg);
+          }
+          &:after {
+            transform: rotate(-45deg);
+        }
+    }
     #box1{
         opacity: 0;
         position: absolute;
@@ -223,7 +282,7 @@ section{
         padding: 1rem;
         background-color: $background;
         border: 1px solid $accent-color;
-        width: calc(100% - 30rem);
+        width: calc(100% - 35rem);
         opacity: 0;
         &.visible{
             animation: flickerInTo80 1s linear 0s 1 normal forwards;
@@ -275,16 +334,25 @@ section{
     }
 
     #picture{
+        
         @media screen and (max-width: $size-small) {
             display: none;
         }
-
+        
         position: absolute;
         right: 1vw;
         top: 60vh;
         width: 20rem;
         z-index: 1;
         border: 1px solid $accent-color;
+        padding: 1.5rem;
+        background: repeating-linear-gradient(
+            45deg,
+            $accent-color,
+            $accent-color 10px,
+            $background 10px,
+            $background 20px
+);
 
         img{
             width: 100%;
@@ -334,6 +402,21 @@ section{
     }
 }
 
+.corners{
+    $border-width: 3px;
+        &:before, &:after, &>:first-child:before, &>:first-child:after {
+            position:absolute;
+            width: 80px; height: 80px;
+            border-color:$accent-color; /* or whatever colour */
+            border-style: solid; /* or whatever style */
+            content: ' ';
+        }
+        &:before {top:0;left:0;border-width: $border-width 0 0 $border-width}
+        &:after {top:0;right:0;border-width: $border-width $border-width 0 0}
+        &>:first-child:before {bottom:0;right:0;border-width: 0 $border-width $border-width 0}
+        &>:first-child:after {bottom:0;left:0;border-width: 0 0 $border-width $border-width}
+}
+
 #projects{
     position: absolute;
     >h1{
@@ -356,32 +439,37 @@ section{
             height: auto;
             position: relative;
             cursor: pointer;
-
-            &:after{
-                content: attr(data-name);
-                position: absolute;
-                text-align: center;
-                left: 0;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
+            
+            .hover{
                 opacity: 0;
-                transition: opacity .2s;
-            }
-            &:hover:after{
-                opacity: 1;
-            }
-            &:before{
-                content: '';
+                transition: opacity .1s;
+                // display: none;
                 position: absolute;
                 inset: 0;
-                background-color: $accent-color;
-                opacity: .15;
-                transition: all .2s;
+                background: rgba(0, 0, 0, .7);
+
+                h2{
+                    margin-top: .5rem;
+                    font-size: 2.5rem;
+                    text-align: center;
+                }
+
+                div{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                    border: none;
+
+                    p{
+
+                    }
+                }
             }
-            &:hover:before{
-                opacity: .7;
-                background-color: #000;
+            &:hover .hover{
+                opacity: 1;
+                // display: block;
             }
 
             img{

@@ -47,6 +47,9 @@
         </div>
         <div id="box1" class="layer2"></div>
         <div id="box2" class="layer1"></div>
+        <div id="cross1"></div>
+        <div id="cross2"></div>
+        <div id="cross3"></div>
         <div id="line1" class="layer3"></div>
         <div id="line2" class="layer2"></div>
         
@@ -62,11 +65,11 @@
             <img src="resources/pfp.jpg" alt="A picture of me in a boat" loading=lazy>
         </div>
         <div id="line5" class="layer1"></div>
-        <div id="aboutpanel" class="intersect">
+        <div id="aboutpanel" class="intersect corners">
             <h1>About</h1>
             <p>I am a self-taught programmer from Hungary. I have always been fascinated with computers, and were programming them for a while now. I'm interested in every and any aspect of it: The web, mobile, desktop, you name it</p>
         </div>
-        <div id="skillz" class="intersect">
+        <div id="skillz" class="intersect corners">
             <h1 id="skillztitle" class="intersect">My skills</h1>
             <div class="intersect">
                 <p><i class="devicon-unity-original"></i>Unity</p>
@@ -91,17 +94,45 @@
     <section id="projects">
         <h1 id="projectstitle" class="intersect">Projects</h1>
         <div id="gallery">
-            <div data-name="Breadengine" onclick="openurl('BreadEngine')">
+            <div onclick="openurl('BreadEngine')">
+                <div class="hover">
+                    <h2>BreadEngine</h2>
+                    <div>
+                        <p>C#</p>
+                        <p>Dotnet</p>
+                    </div>
+                </div>
                 <img src="resources/breadengine.webp" alt="Breadengine" loading=lazy>
             </div>
-            <div data-name="Quiz app" onclick="openurl('quiz-app')">
+            <div onclick="openurl('quiz-app')">
+                <div class="hover">
+                    <h2>Quiz app</h2>
+                    <div>
+                        <p>Javascript</p>
+                        <p>Svelte</p>
+                    </div>
+                </div>
                 <img src="resources/quizapp.webp" alt="Quiz-app" loading=lazy>
                 <p class="splash">Live demo!</p>
             </div>
-            <div data-name="Desktop managR" onclick="openurl('desktopmanager')">
+            <div onclick="openurl('desktopmanager')">
+                <div class="hover">
+                    <h2>Desktop managR</h2>
+                    <div>
+                        <p>Javascript</p>
+                        <p>Electron</p>
+                    </div>
+                </div>
                 <img src="resources/desktopmanager.webp" alt="DekstopmanagR" loading=lazy>
             </div>
-            <div data-name="SolvR suite" onclick="openurl('solvr')">
+            <div onclick="openurl('solvr')">
+                <div class="hover">
+                    <h2>SolvR suite</h2>
+                    <div>
+                        <p>Javascript</p>
+                        <p>Node</p>
+                    </div>
+                </div>
                 <img src="resources/nonogramsolver.webp" alt="NonogramSolvR" loading=lazy>
             </div>
         </div>
