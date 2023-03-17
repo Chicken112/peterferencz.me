@@ -78,7 +78,39 @@ section{
     width: 100%;
     position: relative;
 }
+#floating{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    z-index: 100;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: $background;
+    border: 1px solid $accent-color;
+    margin: .5rem;
 
+    img{
+        width: 2rem;
+        height: 2rem;
+        margin-left: auto;
+        background-color: transparent;
+        transition: box-shadow .3s;
+        cursor: pointer;
+
+        &:first-child{
+            border-radius: 50%;
+        }
+
+        &:hover{
+            box-shadow: 0 0 60px 30px $accent-color,
+            //0 0 100px 60px #f0f,
+            //0 0 140px 90px #0ff;
+        }
+    }
+}
 #landing{
     height: 100vh;
     // transition: all 0.5s;
@@ -118,65 +150,42 @@ section{
         }
 
     }
-    #cross1{
+    .cross{
         position: absolute;
-        top: 5rem;
-        left: 20%;
 
         &:before, &:after {
             content: ' ';
             position: absolute;
             left: 15px;
             height: 33px;
-            width: 2px;
             background-color: $accent-color;
-          }
-          &:before {
-            transform: rotate(45deg);
-          }
-          &:after {
-            transform: rotate(-45deg);
-          }
+        }
+        &:before {
+            animation: fadenrotate1 .5s ease-in-out 1s 1 normal forwards;
+        }
+        &:after {
+            animation: fadenrotate2 .5s ease-in-out 1s 1 normal forwards;
+        }
+    }
+    #cross1{
+        top: 5rem;
+        left: 20%;   
     }
     #cross2{
-        position: absolute;
         top: 7rem;
         left: 15%;
-
-        &:before, &:after {
-            content: ' ';
-            position: absolute;
-            left: 15px;
-            height: 33px;
-            width: 2px;
-            background-color: $accent-color;
-          }
-          &:before {
-            transform: rotate(45deg);
-          }
-          &:after {
-            transform: rotate(-45deg);
-        }
     }
     #cross3{
-        position: absolute;
         top: 9rem;
         left: 18%;
-
-        &:before, &:after {
-            content: ' ';
-            position: absolute;
-            left: 15px;
-            height: 33px;
-            width: 2px;
-            background-color: $accent-color;
-          }
-          &:before {
-            transform: rotate(45deg);
-          }
-          &:after {
-            transform: rotate(-45deg);
-        }
+    }
+    #cross4{
+        top: 110vh;
+        left: 50%;
+    }
+    #cross5{
+        top: 112vh;
+        left: 52%;
     }
     #box1{
         opacity: 0;
@@ -358,7 +367,7 @@ section{
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-bottom: 1px solid $accent-color;
+            border: 1px solid $accent-color;
         }
 
         p{
@@ -444,6 +453,10 @@ section{
                 opacity: 0;
                 transition: opacity .1s;
                 // display: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
                 position: absolute;
                 inset: 0;
                 background: rgba(0, 0, 0, .7);
@@ -461,10 +474,6 @@ section{
                     justify-content: center;
                     gap: 1rem;
                     border: none;
-
-                    p{
-
-                    }
                 }
             }
             &:hover .hover{
@@ -511,6 +520,36 @@ section{
 }
 
 
+@keyframes fadenrotate1 {
+    from{
+        opacity: 0;
+        transform: roatate(0);
+        width: 0px;
+    }
+    10%{
+        width: 2px;
+    }
+    to{
+        opacity: 1;
+        transform: rotate(45deg);
+        width: 2px;
+    }
+}
+@keyframes fadenrotate2 {
+    from{
+        opacity: 0;
+        transform: roatate(0);
+        width: 0px;
+    }
+    10%{
+        width: 2px;
+    }
+    to{
+        opacity: 1;
+        transform: rotate(-45deg);
+        width: 2px;
+    }
+}
 @keyframes splash {
     from {
         transform:scale(0.9) rotate(25deg);

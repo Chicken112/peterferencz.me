@@ -22,8 +22,6 @@ function load() {
     aboutpanel = document.querySelector('#aboutpanel')
     skillz = document.querySelector('#skillz')
     footer = document.querySelector('#footer')
-    links = document.querySelector("#links")
-    linksStartOffset = links.offsetTop
     
     setTimeout(() => {
         landingSection.classList.add('loaded')
